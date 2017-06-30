@@ -1,0 +1,37 @@
+group 'com.tester'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'BoilerplatePlugin'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.fasterxml.jackson.core:jackson-databind:2.8.1',
+                'junit:junit:4.11'
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11',
+            'com.fasterxml.jackson.core:jackson-databind:2.8.1',
+            'org.slf4j:slf4j-log4j12:1.7.5'
+    testCompile 'junit:junit:4.11'
+}
+
+// Configuration for the custom task.
+boilerplate {
+    configFilePath = "src/main/resources/config.json"
+}
