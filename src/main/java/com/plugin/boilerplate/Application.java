@@ -13,14 +13,14 @@ public final class Application {
     public static void main(String[] args) {
         LOGGER.info("Creating an instance of Application.");
         final Application application = new Application();
-        application.outputMessage("outputting from application.");
+        LOGGER.info(application.getGreeting("System"));
     }
 
     /**
-     * Logout a message.
-     * @param message
+     * Get a greeting message.
+     * @param user
      */
-    public void outputMessage(final String message) {
-        LOGGER.info(message);
+    public String getGreeting(final String user) {
+        return "Hello from the Application class " + user;
     }
 }

@@ -21,6 +21,10 @@ class BoilerplateTask extends DefaultTask {
 
         def configFile = new File(project.boilerplate.configFilePath)
 
+        if (!configFile.exists()) {
+            throw new IllegalArgumentException("Could not generate the configuration file. Please provide a valid config file path.")
+        }
+
         logger.info("Retrieved the config file located at ${project.boilerplate.configFilePath}")
 
         def mapper = new ObjectMapper()
