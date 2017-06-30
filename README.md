@@ -1,4 +1,4 @@
-# Plugin Boilerplate
+# gradle-plugin-boilerplate
 
 This project provides a boilerplate for gradle projects that implement an internal custom plugin. Gradle looks for and
  inspects the `buildSrc` directory at build time to load any custom plugins and tasks. The `buildSrc` itself can be
